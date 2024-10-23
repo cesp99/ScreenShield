@@ -2,7 +2,9 @@
 
 ScreenShield is a robust Kotlin library designed to safeguard your Android app's sensitive content by preventing screenshots and screen recordings. Built with Jetpack Compose, this library leverages Android's `FLAG_SECURE` flag to automatically protect your app's screens while they are active, ensuring that confidential information remains secure.
 
-ScreenShield offers a seamless and efficient solution for enhancing your app's privacy. Part of the library's implementation is based on the work by [@ahmetfurkhans](https://github.com/ahmetfurkans/BlockScreenShotCompose), which inspired this effective approach.
+ScreenShield offers a seamless solution for enhancing your app's privacy, and it's currently used in the [Eyed Auth](https://play.google.com/store/apps/details?id=de.aploi.eyedauth) app, showcasing its effectiveness in real-world applications. 
+
+The library's implementation draws inspiration from the work of [@ahmetfurkhans](https://github.com/ahmetfurkans/BlockScreenShotCompose).
 
 ## Key Features
 
@@ -26,8 +28,9 @@ fun YourProtectedScreen() {
     }
 }
 ```
+> [!NOTE]  
+> By wrapping your composables with `ScreenShield`, you ensure that screenshots and screen recordings are blocked whenever the screen is active.
 
-By wrapping your composables with `AntiSS`, you ensure that screenshots and screen recordings are blocked whenever the screen is active.
 
 ## How It Works
 
@@ -35,9 +38,10 @@ ScreenShield uses Android's `WindowManager.LayoutParams.FLAG_SECURE` flag to pre
 
 ### Core Components:
 
-1. **AntiSS Composable**: The central composable that blocks screenshots and recordings.
+1. **ScreenShield Composable**: The central composable that blocks screenshots and recordings.
 2. **ComposableLifeCycle**: A lifecycle-aware composable that triggers protection based on the app's state.
 3. **findActivity()**: A helper function that retrieves the current activity, essential for applying window flags.
+
 
 
 ## License
@@ -55,6 +59,4 @@ For inquiries or support, feel free to reach out to Carlo at [carlo@aploi.de](ma
 
 ## Used By
 
-This library is used currently on this apps:
-
-- [Eyed Auth](https://play.google.com/store/apps/details?id=de.aploi.eyedauth)
+This library is proudly used in the [Eyed Auth](https://play.google.com/store/apps/details?id=de.aploi.eyedauth) app, demonstrating its reliability in protecting sensitive user information.
